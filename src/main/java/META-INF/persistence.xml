@@ -15,5 +15,6 @@
       <property name="eclipselink.logging.level" value="ALL" />
     </properties>
  --> 
+      <validation-mode>NONE</validation-mode>
 	</persistence-unit>
 </persistence>
