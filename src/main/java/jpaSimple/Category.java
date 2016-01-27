@@ -23,10 +23,14 @@ public class Category implements Serializable {
 	public Integer getVersion() {
 		return 1;
 	}
-
+	public String toString(){
+        return id==null?"0":String.valueOf(id);
+       }
 //------------------------
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+//	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "users_seq_gen")
+	@SequenceGenerator(name = "users_seq_gen", sequenceName = "category_id_seq",allocationSize=1)
 	public Integer getId() {
 		return this.id;
 	}
