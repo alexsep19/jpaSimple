@@ -30,7 +30,7 @@ public class Category implements Serializable {
 	@Id
 //	@GeneratedValue(strategy=GenerationType.AUTO)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "users_seq_gen")
-	@SequenceGenerator(name = "users_seq_gen", sequenceName = "category_id_seq",allocationSize=1)
+	@SequenceGenerator(name = "users_seq_gen", sequenceName = "rss.category_id_seq",allocationSize=1)
 	public Integer getId() {
 		return this.id;
 	}
