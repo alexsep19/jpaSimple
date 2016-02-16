@@ -22,10 +22,6 @@ public class testo {
 		  Category o = new Category();
 		  o.setName("aaaaa");
 		  em.getTransaction().begin();
-//	      if (o.toString().equals("0")){
-//	    	   em.persist(o);
-//    	  }
-//	      else 
 	    	  em.merge(o);
 	      em.flush();
 	      em.getTransaction().commit();
