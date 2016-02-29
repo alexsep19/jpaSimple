@@ -3,6 +3,7 @@ package jpaSimple;
 import java.io.Serializable;
 
 import javax.persistence.*;
+//import org.hibernate.javax.persistence.*;
 
 
 /**
@@ -20,9 +21,11 @@ public class Category implements Serializable {
 	public Category() {
 	}
 //------- mine -----------
+	@Transient
 	public Integer getVersion() {
 		return 1;
 	}
+	@Transient
 	public String toString(){
         return id==null?"0":String.valueOf(id);
        }
