@@ -29,3 +29,4 @@ CREATE TABLE rolo.roles (
  );
  CREATE UNIQUE INDEX urro_unq ON rolo.urro (user_id,role_id);
  CREATE UNIQUE INDEX roles_unq ON rolo.roles (code);
+ CREATE UNIQUE INDEX users_unq ON rolo.users (name);
