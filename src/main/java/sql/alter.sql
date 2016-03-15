@@ -20,7 +20,7 @@ CREATE TABLE rolo.users (
 );
 CREATE TABLE rolo.roles (
   id SERIAL PRIMARY KEY,
-  name varchar(30) NOT NULL
+  code varchar(10) NOT NULL
  );
  CREATE TABLE rolo.urro (
   id SERIAL PRIMARY KEY,
