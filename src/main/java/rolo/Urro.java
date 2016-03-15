@@ -10,6 +10,7 @@ import javax.persistence.*;
  * 
  */
 @Entity
+@Table(schema = "ROLO")
 @NamedQuery(name="Urro.findAll", query="SELECT u FROM Urro u")
 public class Urro implements Serializable {
 	private static final long serialVersionUID = 1L;

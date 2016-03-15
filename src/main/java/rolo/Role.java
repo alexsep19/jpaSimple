@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import javax.persistence.*;
 
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -12,7 +13,7 @@ import java.util.List;
  * 
  */
 @Entity
-@Table(name="roles")
+@Table(name="roles", schema = "ROLO")
 @NamedQuery(name="Role.findAll", query="SELECT r FROM Role r")
 public class Role implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -21,7 +22,7 @@ public class Role implements Serializable {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "roles_seq_gen")
 	@SequenceGenerator(name = "roles_seq_gen", sequenceName = "rolo.roles_id_seq",allocationSize=1)
 	private Integer id;
-	private String name;
+	private String code;
 
 	//bi-directional many-to-one association to Urro
 	@OneToMany(mappedBy="role")
@@ -34,8 +35,17 @@ public class Role implements Serializable {
 	public String toString(){
         return id==null?"0":String.valueOf(id);
 	}
+	@Transient
+	public List<String> codeRole = Arrays.asList(new String[]{"admin","any"});
+//	public String[] codeRole = new String[]{"admin","any"};
     //--------------------------
 
+	public List<String> getCodeRole() {
+		return codeRole;
+	}
+	public void setCodeRole(List<String> codeRole) {
+		this.codeRole = codeRole;
+	}
 	public Role() {
 	}
 
@@ -47,12 +57,12 @@ public class Role implements Serializable {
 		this.id = id;
 	}
 
-	public String getName() {
-		return this.name;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public List<Urro> getUrros() {

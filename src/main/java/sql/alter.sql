@@ -27,3 +27,5 @@ CREATE TABLE rolo.roles (
   user_id INTEGER NOT NULL references rolo.users(id),
   role_id INTEGER NOT NULL references rolo.roles(id)
  );
+ CREATE UNIQUE INDEX urro_unq ON rolo.urro (user_id,role_id);
+ CREATE UNIQUE INDEX roles_unq ON rolo.roles (code);
