@@ -35,17 +35,17 @@ public class Role implements Serializable {
 	public String toString(){
         return id==null?"0":String.valueOf(id);
 	}
-	@Transient
-	public List<String> codeRole = Arrays.asList(new String[]{"admin","any"});
+//	@Transient
+//	public List<String> codeRole = Arrays.asList(new String[]{"admin","any"});
 //	public String[] codeRole = new String[]{"admin","any"};
     //--------------------------
 
-	public List<String> getCodeRole() {
-		return codeRole;
-	}
-	public void setCodeRole(List<String> codeRole) {
-		this.codeRole = codeRole;
-	}
+//	public List<String> getCodeRole() {
+//		return codeRole;
+//	}
+//	public void setCodeRole(List<String> codeRole) {
+//		this.codeRole = codeRole;
+//	}
 	public Role() {
 	}
 

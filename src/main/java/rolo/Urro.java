@@ -21,11 +21,11 @@ public class Urro implements Serializable {
 	private Integer id;
 
 	//bi-directional many-to-one association to Role
-	@ManyToOne(fetch=FetchType.LAZY)
+	@ManyToOne(fetch=FetchType.EAGER)
 	private Role role;
 
 	//bi-directional many-to-one association to User
-	@ManyToOne(fetch=FetchType.LAZY)
+	@ManyToOne(fetch=FetchType.EAGER)
 	private User user;
 
 	//------- mine -----------
